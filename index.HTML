@@ -1,4 +1,4 @@
-  <!doctype html>
+<!doctype html>
 <html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,108 +19,20 @@
         .benefit-card { transition: transform 0.3s, box-shadow 0.3s; }
         .timeline-dot { width: 16px; height: 16px; border-radius: 50%; background: #0B5CFF; }
         .timeline-line { width: 2px; height: 40px; background: linear-gradient(to bottom, #0B5CFF, #0B5CFF50); }
- .hero-glow{
-    position:absolute;
-    width:700px;
-    height:700px;
-    background:linear-gradient(
-45deg,
-#0B5CFF,
-#2563EB,
-#60A5FA
-);
-    filter:blur(200px);
-    opacity:.20;
-    top:-150px;
-    right:-100px;
-    border-radius:50%;
-    animation:floatGlow 8s ease-in-out infinite;
-}
-
-@keyframes floatGlow{
-    0%,100%{
-        transform:translateY(0px);
-    }
-    50%{
-        transform:translateY(30px);
-    }
-}   
-</style>
+    </style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
   <script src="/_sdk/resizing_sdk.js" type="text/javascript"></script>
  <script src="/_sdk/telemetry_sdk.js"></script></head>
  <body data-template-id="__page-root" class="w-full" style="background: rgb(255, 255, 255);"><!-- HERO -->
-  <header class="relative overflow-hidden">
-<div class="hero-glow"></div>
-<div class="absolute right-0 top-24 hidden xl:block opacity-30">
-    <img
-        src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200"
-        alt="Dashboard"
-        class="w-[700px] rounded-3xl shadow-2xl">
-</div>
-
-<div class="absolute inset-0">
-    <img
-        src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1920"
-        alt="Enterprise Technology"
-        class="w-full h-full object-cover">
-</div>
-
-<div class="absolute inset-0 bg-gradient-to-r from-[#081120]/95 via-[#081120]/90 to-[#081120]/80"></div>
-
-<div class="absolute right-0 top-20 hidden xl:block opacity-40 z-10">
-    <img
-        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600"
-        alt="Analytics Dashboard"
-        class="w-[700px] rounded-3xl shadow-2xl">
-</div>
-
-<!-- MAIN CONTENT -->
-
-<div class="max-w-7xl mx-auto px-6 py-24 md:py-32 grid lg:grid-cols-2 gap-16 items-center relative z-20">
-
-    <!-- LEFT SIDE -->
+  <header class="relative overflow-hidden" style="background: linear-gradient(135deg, #081120 0%, #0d1b3a 50%, #081120 100%);">
+   <div class="max-w-7xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
     <div class="fade-in">
-
-        <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/20 text-blue-300 text-sm mb-6">
-            Zoom Platinum Partner
-        </div>
-
-        <h1 class="text-white text-5xl md:text-6xl font-extrabold leading-tight">
-            Cloud Business Phone.
-            <br>
-            Built for Hybrid Teams.
-        </h1>
-
-        <p class="text-blue-100 text-xl mt-8 max-w-xl">
-            Zoom Phone with AI Companion. Deployed and managed by Sysgrate — Zoom Platinum Partner.
-        </p>
-
-        <button class="cta-btn mt-8 px-8 py-4 rounded-xl bg-blue-600 text-white font-semibold">
-            Book a 20-min Demo
-        </button>
-
-        <div class="mt-8 flex items-center gap-3">
-            <div class="h-3 w-3 rounded-full bg-green-400"></div>
-            <span class="text-blue-200">
-                7M+ Zoom Phone seats deployed globally
-            </span>
-        </div>
-
+     <h1 data-template-id="hero-headline" class="canva-text text-white leading-tight" style="color: rgb(255, 255, 255); font-weight: 800; font-style: normal; font-size: 48px;">Cloud Business Phone. Built for Hybrid Teams.</h1>
+     <p data-template-id="hero-subheadline" class="canva-text text-blue-200 mt-6 text-lg" style="color: rgb(191, 219, 254); font-weight: 400; font-style: normal; font-size: 16px;">Zoom Phone with AI Companion. Deployed and managed by Sysgrate — Zoom Platinum Partner.</p><button data-template-id="hero-cta" class="canva-button cta-btn mt-8 px-8 py-4 rounded-lg font-semibold text-lg" style="background: rgb(11, 92, 255); color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Book a 20-min Demo</button>
+     <p data-template-id="hero-trust" class="canva-text mt-6 text-blue-300 text-sm" style="color: rgb(147, 197, 253); font-weight: 400; font-style: normal; font-size: 16px;">7M+ Zoom Phone seats deployed globally</p>
     </div>
-
-    <!-- RIGHT SIDE FORM -->
-    <div class="fade-in bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-2xl">
-
-    </div>
-
-    <!-- FORM -->
     <div class="fade-in bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-        ...
-    </div>
-
-</div>
-     class="canva-text text-white text-xl font-semibold mb-6" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 19px;">Get a personalised demo</h3>
+     <h3 data-template-id="form-title" class="canva-text text-white text-xl font-semibold mb-6" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 19px;">Get a personalised demo</h3>
      <form id="lead-form" class="space-y-4">
       <div><label for="fname" class="sr-only">Full Name</label> <input id="fname" type="text" data-template-id="form-name" class="canva-input w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:border-blue-400" placeholder="Full Name" style="font-weight: 400; font-style: normal; font-size: 16px;">
       </div>
