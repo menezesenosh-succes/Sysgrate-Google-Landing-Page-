@@ -19,12 +19,39 @@
         .benefit-card { transition: transform 0.3s, box-shadow 0.3s; }
         .timeline-dot { width: 16px; height: 16px; border-radius: 50%; background: #0B5CFF; }
         .timeline-line { width: 2px; height: 40px; background: linear-gradient(to bottom, #0B5CFF, #0B5CFF50); }
-    </style>
+ .hero-glow{
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:linear-gradient(
+45deg,
+#0B5CFF,
+#2563EB,
+#60A5FA
+);
+    filter:blur(200px);
+    opacity:.20;
+    top:-150px;
+    right:-100px;
+    border-radius:50%;
+    animation:floatGlow 8s ease-in-out infinite;
+}
+
+@keyframes floatGlow{
+    0%,100%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(30px);
+    }
+}   
+</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
   <script src="/_sdk/resizing_sdk.js" type="text/javascript"></script>
  <script src="/_sdk/telemetry_sdk.js"></script></head>
  <body data-template-id="__page-root" class="w-full" style="background: rgb(255, 255, 255);"><!-- HERO -->
   <header class="relative overflow-hidden">
+<div class="hero-glow"></div>
 <div class="absolute right-0 top-24 hidden xl:block opacity-30">
     <img
         src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200"
