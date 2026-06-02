@@ -52,14 +52,27 @@
     }
     #main-nav.scrolled { box-shadow: 0 4px 24px rgba(11,92,255,0.10); }
 
-    .nav-inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 40px;
-  height: 90px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+    nav-inner {
+.sysgrate-logo {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+}
+
+.zoom-logo {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+}
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+    height: 90px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
     /* Sysgrate logo text */
@@ -221,25 +234,21 @@
   <!-- ══════════════════════════════════════════
        NAVBAR  — Sysgrate logo left · Zoom right
   ══════════════════════════════════════════ -->
-  <nav id="main-nav" aria-label="Main navigation">
+ <nav id="main-nav" aria-label="Main navigation">
     <div class="nav-inner">
 
-      <div class="nav-inner">
+        <img
+            src="sysgrate-logo.png"
+            alt="Sysgrate"
+            class="sysgrate-logo">
 
-    <!-- Sysgrate Logo -->
-    <img
-        src="sysgrate-logo.png"
-        alt="Sysgrate"
-        class="h-14 object-contain">
+        <img
+            src="zoom-logo.png"
+            alt="Zoom"
+            class="zoom-logo">
 
-    <!-- Zoom Logo -->
-    <img
-        src="zoom-logo.png"
-        alt="Zoom"
-        class="h-12 object-contain">
-
-</div>
-  </nav>
+    </div>
+</nav>
 
   <!-- ══════════════════════════════════════════
        HERO
