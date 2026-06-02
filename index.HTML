@@ -764,9 +764,8 @@
     console.log("Google Script Response:", result);
 
     if(response.ok){
-        document.getElementById('lead-form').reset();
-        document.getElementById('form-success').classList.remove('hidden');
-    }else{
+    window.location.href = "thank-you.html";
+}else{
         alert("Google Script Error: " + result);
     }
 
