@@ -240,54 +240,6 @@
 
     /* ── Counter animation ── */
     .count-up { display: inline-block; }
-/* HubSpot Styling */
-
-.hs-form-frame{
-    width:100%;
-}
-
-/* Make labels visible */
-.hs-form-frame,
-.hs-form-frame *{
-    color:white !important;
-}
-
-.hs-form-frame label{
-    color:white !important;
-    font-weight:600 !important;
-}
-
-/* Inputs */
-.hs-form-frame input,
-.hs-form-frame textarea,
-.hs-form-frame select{
-
-    background:rgba(255,255,255,.08) !important;
-
-    color:white !important;
-
-    border:1px solid rgba(255,255,255,.2) !important;
-
-    border-radius:12px !important;
-
-    padding:14px !important;
-}
-
-/* Submit button */
-.hs-form-frame input[type="submit"]{
-
-    background:#0B5CFF !important;
-
-    color:white !important;
-
-    border:none !important;
-
-    border-radius:12px !important;
-
-    font-weight:700 !important;
-
-    cursor:pointer;
-}
   </style>
 </head>
 <body data-template-id="__page-root" class="w-full" style="background:#fff;">
@@ -354,27 +306,45 @@
       </div>
 
       <!-- Right: Lead form -->
-    <!-- Right: HubSpot Form -->
-<div class="fade-in fade-delay-2 bg-white/10 backdrop-blur-xl rounded-3xl p-10 border border-white/20 shadow-2xl">
+      <div class="fade-in fade-delay-2 bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+        <h3 data-template-id="form-title"
+            class="text-white text-xl font-semibold mb-6"
+            style="font-size:19px;">
+          Get a personalised demo
+        </h3>
+        <form id="lead-form" class="space-y-4" novalidate>
+          <div>
+            <label for="ffname" class="block text-blue-200 text-sm mb-1">First Name <span class="text-red-400">*</span></label>
+            <input id="ffname" type="text" class="form-input w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white" placeholder="">
+          </div>
+          <div>
+            <label for="flname" class="block text-blue-200 text-sm mb-1">Last Name <span class="text-red-400">*</span></label>
+            <input id="flname" type="text" class="form-input w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white" placeholder="">
+          </div>
+          <div>
+            <label for="fcompany" class="block text-blue-200 text-sm mb-1">Company <span class="text-red-400">*</span></label>
+            <input id="fcompany" type="text" data-template-id="form-company" class="form-input w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white" placeholder="">
+          </div>
+          <div>
+            <label for="femail" class="block text-blue-200 text-sm mb-1">Work Email <span class="text-red-400">*</span></label>
+            <input id="femail" type="email" data-template-id="form-email" class="form-input w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white" placeholder="">
+          </div>
+          <div>
+            <label for="fphone" class="block text-blue-200 text-sm mb-1">Phone Number <span class="text-red-400">*</span></label>
+            <input id="fphone" type="tel" data-template-id="form-phone" class="form-input w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white" placeholder="">
+          </div>
+          <button data-template-id="form-submit" type="submit"
+                  class="cta-btn shimmer-btn w-full py-4 rounded-lg font-semibold text-lg"
+                  style="background:rgb(11,92,255);color:#fff;font-size:16px;">
+            Request Demo
+          </button>
+        </form>
+        <p id="form-success" class="hidden text-green-400 mt-4 text-center font-medium">
+          Thank you! We'll be in touch within 24 hours.
+        </p>
+      </div>
 
-    <h3 class="text-white text-xl font-semibold mb-6">
-        Get a personalised demo
-    </h3>
-<p class="text-blue-200 mb-6">
-Schedule a personalised consultation with our Zoom Phone specialists.
-</p>
-
-    <script src="https://js-na2.hsforms.net/forms/embed/246098557.js" defer></script>
-
-    <div
-        class="hs-form-frame"
-        data-region="na2"
-        data-form-id="e21b01b5-edec-4ed7-9375-bc707ab6211a"
-        data-portal-id="246098557">
     </div>
-
-</div>
-</div>
   </header>
 
   <!-- CUSTOMER SUPPORT IMAGE -->
@@ -710,8 +680,13 @@ Schedule a personalised consultation with our Zoom Phone specialists.
       });
     });
 
-   // HubSpot handles form submission automatically
-   
+    // ── 5. Form submit ──
+    document.getElementById('lead-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('lead-form').classList.add('hidden');
+      document.getElementById('form-success').classList.remove('hidden');
+    });
+
     // ── 6. Floating particles ──
     const container = document.getElementById('particles-container');
     for (let i = 0; i < 18; i++) {
