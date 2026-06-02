@@ -130,11 +130,20 @@
       50%  { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-    .hero-bg {
-      background: linear-gradient(135deg, #081120, #0d1b3a, #0b2760, #081120);
-      background-size: 300% 300%;
-      animation: gradientShift 10s ease infinite;
-    }
+    .hero-background{
+    position:relative;
+
+    background-image:
+        linear-gradient(
+            rgba(8,17,32,0.75),
+            rgba(8,17,32,0.75)
+        ),
+        url('customer-support.jpg');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
 
     /* ── Floating particles in hero ── */
     .particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
@@ -266,7 +275,8 @@
   <!-- ══════════════════════════════════════════
        HERO
   ══════════════════════════════════════════ -->
-  <header class="relative overflow-hidden hero-bg">
+  <header class="relative overflow-hidden hero-background">
+<div class="absolute inset-0 backdrop-blur-[2px]"></div>
 
     <!-- Floating particles -->
     <div class="particles" id="particles-container" aria-hidden="true"></div>
@@ -306,7 +316,7 @@
       </div>
 
       <!-- Right: Lead form -->
-      <div class="fade-in fade-delay-2 bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+      <div class="fade-in fade-delay-2 bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
         <h3 data-template-id="form-title"
             class="text-white text-xl font-semibold mb-6"
             style="font-size:19px;">
@@ -346,15 +356,6 @@
 
     </div>
   </header>
-
-  <!-- CUSTOMER SUPPORT IMAGE -->
-  <section class="bg-white py-8">
-    <div class="max-w-7xl mx-auto px-6">
-      <img src="imagescustomer-support.jpg" alt="Customer Support"
-           class="w-full rounded-[40px] shadow-2xl object-cover">
-    </div>
-  </section>
-
   <!-- ══════════════════════════════════════════
        TRUST BAR — animated marquee
   ══════════════════════════════════════════ -->
