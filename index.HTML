@@ -8,9 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'DM Sans', sans-serif; }html {
-    scroll-behavior: smooth;
-}
+    body { font-family: 'DM Sans', sans-serif; }
 
     /* ── Scroll fade-in ── */
     .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -242,41 +240,7 @@
 
     /* ── Counter animation ── */
     .count-up { display: inline-block; }
-/* HubSpot Form Styling */
-
-.hs-form-frame{
-    width:100%;
-}
-
-.hs-form-frame iframe{
-    width:100% !important;
-    min-height:500px !important;
-    border:none !important;
-}
-
-.hs-form-frame label{
-    color:white !important;
-    font-weight:600 !important;
-}
-
-.hs-form-frame input,
-.hs-form-frame textarea,
-.hs-form-frame select{
-    border-radius:12px !important;
-}
-
-.hs-form-frame input[type="submit"]{
-    background:#0B5CFF !important;
-    color:white !important;
-    border:none !important;
-    border-radius:12px !important;
-    font-weight:700 !important;
-}  
-.hs-form-frame,
-.hs-form-frame * {
-    color: #ffffff !important;
-}
-</style>
+  </style>
 </head>
 <body data-template-id="__page-root" class="w-full" style="background:#fff;">
 
@@ -321,11 +285,11 @@
            style="color:rgb(191,219,254);font-size:16px;">
           Zoom Phone combines traditional PBX features with intelligent call routing, IVRs, call recording, and other VoIP functionalities.
         </p>
-        <a href="#hubspot-form"
-   class="cta-btn shimmer-btn inline-block mt-8 px-8 py-4 rounded-lg font-semibold text-lg"
-   style="background:rgb(11,92,255);color:#fff;font-size:16px;text-decoration:none;">
-   Book a 20-min Demo
-</a>
+        <button data-template-id="hero-cta"
+                class="cta-btn shimmer-btn mt-8 px-8 py-4 rounded-lg font-semibold text-lg"
+                style="background:rgb(11,92,255);color:#fff;font-size:16px;">
+          Book a 20-min Demo
+        </button>
 
         <!-- Stat badge -->
         <div class="mt-6 flex items-center gap-3">
@@ -342,29 +306,43 @@
       </div>
 
       <!-- Right: Lead form -->
-      <div id="hubspot-form"
-     class="fade-in fade-delay-2 bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
-
-    <div class="mb-6">
-        <h3 class="text-white text-2xl font-bold">
-            Get a Personalised Demo
+      <div class="fade-in fade-delay-2 bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+        <h3 data-template-id="form-title"
+            class="text-white text-xl font-semibold mb-6"
+            style="font-size:19px;">
+          Get a personalised demo
         </h3>
-
-        <p class="text-blue-200 mt-2">
-            Talk to our Zoom Phone specialists and see how AI-powered business communications can transform your organization.
+        <form id="lead-form" class="space-y-4" novalidate>
+          <div>
+            <label for="ffname" class="block text-blue-200 text-sm mb-1">First Name <span class="text-red-400">*</span></label>
+            <input id="ffname" type="text" class="form-input w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white" placeholder="">
+          </div>
+          <div>
+            <label for="flname" class="block text-blue-200 text-sm mb-1">Last Name <span class="text-red-400">*</span></label>
+            <input id="flname" type="text" class="form-input w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white" placeholder="">
+          </div>
+          <div>
+            <label for="fcompany" class="block text-blue-200 text-sm mb-1">Company <span class="text-red-400">*</span></label>
+            <input id="fcompany" type="text" data-template-id="form-company" class="form-input w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white" placeholder="">
+          </div>
+          <div>
+            <label for="femail" class="block text-blue-200 text-sm mb-1">Work Email <span class="text-red-400">*</span></label>
+            <input id="femail" type="email" data-template-id="form-email" class="form-input w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white" placeholder="">
+          </div>
+          <div>
+            <label for="fphone" class="block text-blue-200 text-sm mb-1">Phone Number <span class="text-red-400">*</span></label>
+            <input id="fphone" type="tel" data-template-id="form-phone" class="form-input w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white" placeholder="">
+          </div>
+          <button data-template-id="form-submit" type="submit"
+                  class="cta-btn shimmer-btn w-full py-4 rounded-lg font-semibold text-lg"
+                  style="background:rgb(11,92,255);color:#fff;font-size:16px;">
+            Request Demo
+          </button>
+        </form>
+        <p id="form-success" class="hidden text-green-400 mt-4 text-center font-medium">
+          Thank you! We'll be in touch within 24 hours.
         </p>
-    </div>
-
-    <script src="https://js-na2.hsforms.net/forms/embed/246098557.js" defer></script>
-
-    <div
-        class="hs-form-frame"
-        data-region="na2"
-        data-form-id="e21b01b5-edec-4ed7-9375-bc707ab6211a"
-        data-portal-id="246098557">
-    </div>
-
-</div>
+      </div>
 
     </div>
   </header>
@@ -413,12 +391,10 @@
         <p data-template-id="teams-body" class="mt-6 text-lg leading-relaxed" style="color:rgb(75,85,99);">
           Zoom Phone runs alongside Teams. Use Teams for chat and meetings. Use Zoom Phone for enterprise-grade voice. No rip-and-replace.
         </p>
-       <a href="#hubspot-form"
-   onclick="document.querySelector('.hs-form-frame input')?.focus();"
-   class="cta-btn shimmer-btn inline-block mt-8 px-8 py-4 rounded-lg font-semibold text-lg"
-   style="background:rgb(11,92,255);color:#fff;text-decoration:none;">
-   Book a 20-min Demo
-</a>
+        <button data-template-id="teams-cta" class="cta-btn mt-8 px-8 py-4 rounded-lg font-semibold"
+                style="background:rgb(11,92,255);color:#fff;font-size:16px;">
+          Book a 20-min Demo
+        </button>
       </div>
       <div class="fade-in fade-delay-2">
         <img data-template-id="teams-image" class="w-full rounded-2xl shadow-xl" loading="lazy"
@@ -645,11 +621,11 @@
         Talk to a Zoom Phone Specialist
       </h2>
       <p class="text-blue-200 mt-4 text-lg">20 minutes. No pitch. We'll show you what's possible.</p>
-      <a href="#hubspot-form"
-   class="cta-btn shimmer-btn inline-block mt-8 px-10 py-4 rounded-lg font-semibold text-lg"
-   style="background:#fff;color:rgb(11,92,255);font-weight:700;font-size:16px;text-decoration:none;">
-   Book a 20-min Demo
-</a>
+      <button data-template-id="final-cta"
+              class="cta-btn shimmer-btn mt-8 px-10 py-4 rounded-lg font-semibold text-lg"
+              style="background:#fff;color:rgb(11,92,255);font-weight:700;font-size:16px;">
+        Book a 20-min Demo
+      </button>
     </div>
   </section>
 
@@ -704,6 +680,12 @@
       });
     });
 
+    // ── 5. Form submit ──
+    document.getElementById('lead-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('lead-form').classList.add('hidden');
+      document.getElementById('form-success').classList.remove('hidden');
+    });
 
     // ── 6. Floating particles ──
     const container = document.getElementById('particles-container');
@@ -752,17 +734,5 @@
     // ── 9. Init Lucide icons ──
     lucide.createIcons();
   </script>
-<script>
-document.querySelectorAll('[data-template-id="hero-cta"], [data-template-id="final-cta"]').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        document.getElementById('hubspot-form').scrollIntoView({
-            behavior: 'smooth',
-            block: 'center'
-        });
-    });
-});
-</script>
 </body>
 </html>
