@@ -240,21 +240,53 @@
 
     /* ── Counter animation ── */
     .count-up { display: inline-block; }
-.hs-form-frame iframe{
-    width:100% !important;
-    min-height:650px !important;
-    border:none !important;
-    border-radius:12px;
-}
+/* HubSpot Styling */
 
 .hs-form-frame{
     width:100%;
 }
 
+/* Make labels visible */
+.hs-form-frame,
+.hs-form-frame *{
+    color:white !important;
+}
+
+.hs-form-frame label{
+    color:white !important;
+    font-weight:600 !important;
+}
+
+/* Inputs */
 .hs-form-frame input,
-.hs-form-frame select,
-.hs-form-frame textarea{
-    border-radius:10px !important;
+.hs-form-frame textarea,
+.hs-form-frame select{
+
+    background:rgba(255,255,255,.08) !important;
+
+    color:white !important;
+
+    border:1px solid rgba(255,255,255,.2) !important;
+
+    border-radius:12px !important;
+
+    padding:14px !important;
+}
+
+/* Submit button */
+.hs-form-frame input[type="submit"]{
+
+    background:#0B5CFF !important;
+
+    color:white !important;
+
+    border:none !important;
+
+    border-radius:12px !important;
+
+    font-weight:700 !important;
+
+    cursor:pointer;
 }
   </style>
 </head>
@@ -323,11 +355,14 @@
 
       <!-- Right: Lead form -->
     <!-- Right: HubSpot Form -->
-<div class="fade-in fade-delay-2 bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+<div class="fade-in fade-delay-2 bg-white/10 backdrop-blur-xl rounded-3xl p-10 border border-white/20 shadow-2xl">
 
     <h3 class="text-white text-xl font-semibold mb-6">
         Get a personalised demo
     </h3>
+<p class="text-blue-200 mb-6">
+Schedule a personalised consultation with our Zoom Phone specialists.
+</p>
 
     <script src="https://js-na2.hsforms.net/forms/embed/246098557.js" defer></script>
 
