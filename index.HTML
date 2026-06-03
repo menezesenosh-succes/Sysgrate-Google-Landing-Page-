@@ -24,7 +24,10 @@ f.parentNode.insertBefore(j,f);
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
+#countryCode option {
+    color: #000;
+}  
+<style>
     body { font-family: 'DM Sans', sans-serif; } html{
     scroll-behavior:smooth;
 }
@@ -393,16 +396,37 @@ style="display:none;visibility:hidden">
        required>
           </div>
           <div>
-            <label for="fphone" class="block text-blue-200 text-sm mb-1">Phone Number <span class="text-red-400">*</span></label>
-           <input id="fphone"
-       name="phone"
-       type="tel"
-       data-template-id="form-phone"
-       class="form-input w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white"
-       placeholder=""
-       required>
-          </div>
-          <button data-template-id="form-submit" type="submit"
+  <label for="fphone" class="block text-blue-200 text-sm mb-1">
+      Phone Number <span class="text-red-400">*</span>
+  </label>
+
+  <div class="flex gap-2">
+
+    <select id="countryCode"
+            class="form-input px-3 py-3 rounded-lg bg-white/10 border border-white/20 text-white">
+
+      <option value="+91">🇮🇳 +91</option>
+      <option value="+971">🇦🇪 +971</option>
+      <option value="+65">🇸🇬 +65</option>
+      <option value="+1">🇺🇸 +1</option>
+      <option value="+44">🇬🇧 +44</option>
+
+    </select>
+
+    <input id="fphone"
+           name="phone"
+           type="tel"
+           placeholder="9876543210"
+           class="form-input flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white"
+           required>
+
+  </div>
+
+  <p class="text-xs text-blue-200 mt-1">
+      Select country code and enter your mobile number.
+  </p>
+</div>
+<button data-template-id="form-submit" type="submit"
                   class="cta-btn shimmer-btn w-full py-4 rounded-lg font-semibold text-lg"
                   style="background:rgb(11,92,255);color:#fff;font-size:16px;">
             Request Demo
@@ -739,7 +763,9 @@ style="display:none;visibility:hidden">
         lastName: document.getElementById('flname').value,
         company: document.getElementById('fcompany').value,
         email: document.getElementById('femail').value,
-        phone: document.getElementById('fphone').value
+        phone:
+document.getElementById('countryCode').value +
+document.getElementById('fphone').value
     };
 
   try {
