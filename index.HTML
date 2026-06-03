@@ -269,13 +269,15 @@ f.parentNode.insertBefore(j,f);
     /* ── Counter animation ── */
     .count-up { display: inline-block; }
 #countryCode {
-    background-color: #000;
-    color: #fff;
+    background: rgba(255,255,255,0.10);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.20);
+    backdrop-filter: blur(16px);
 }
 
 #countryCode option {
-    background-color: #000;
-    color: #fff;
+    background: #4b5563;
+    color: white;
 }
   </style>
 </head>
@@ -409,7 +411,7 @@ style="display:none;visibility:hidden">
   <div class="flex gap-2">
 
     <select id="countryCode"
-          <select id="countryCode"
+         <select id="countryCode"
         class="form-input px-3 py-3 rounded-lg bg-white/10 border border-white/20 text-white">
 
       <option value="+91">🇮🇳 +91</option>
