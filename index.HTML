@@ -365,6 +365,13 @@ style="display:none;visibility:hidden">
           Get a personalised demo
         </h3>
         <form id="lead-form" class="space-y-4" novalidate>
+<input type="hidden" name="access_key" value="a51d08fb-610b-4cae-8046-27153ea22d26">
+<input type="hidden"
+       name="subject"
+       value="New Zoom Phone Demo Request">
+<input type="hidden"
+       name="redirect"
+       value="https://sysgrate-google-landing-page.vercel.app/thank-you.html">
           <div>
             <label for="ffname" class="block text-blue-200 text-sm mb-1">First Name <span class="text-red-400">*</span></label>
             <input id="ffname"
@@ -769,7 +776,37 @@ style="display:none;visibility:hidden">
     });
 
     // ── 5. Form submit ──
-    document.getElementById('lead-form').addEventListener('submit', async function(e){
+document.getElementById("lead-form").addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+    const form = e.target;
+
+    const formData = new FormData(form);
+
+    formData.set(
+        "phone",
+        document.getElementById("countryCode").value +
+        document.getElementById("fphone").value
+    );
+
+    const response = await fetch(
+        "https://api.web3forms.com/submit",
+        {
+            method: "POST",
+            body: formData
+        }
+    );
+
+    const result = await response.json();
+
+    if(result.success){
+        window.location.href="thank-you.html";
+    }else{
+        alert(result.message);
+    }
+
+});
 
     e.preventDefault();
 
